@@ -12,6 +12,7 @@
 		7FB9C53A2265554E00393227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB9C5382265554E00393227 /* Main.storyboard */; };
 		7FB9C53C2265555200393227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FB9C53B2265555200393227 /* Assets.xcassets */; };
 		7FB9C53F2265555200393227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB9C53D2265555200393227 /* LaunchScreen.storyboard */; };
+		7FB9C54722655A2F00393227 /* dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7FB9C54622655A2F00393227 /* dictionary.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		7FB9C53B2265555200393227 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FB9C53E2265555200393227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FB9C5402265555200393227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FB9C54622655A2F00393227 /* dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				7FB9C5382265554E00393227 /* Main.storyboard */,
 				7FB9C53B2265555200393227 /* Assets.xcassets */,
 				7FB9C53D2265555200393227 /* LaunchScreen.storyboard */,
+				7FB9C54622655A2F00393227 /* dictionary.txt */,
 				7FB9C5402265555200393227 /* Info.plist */,
 			);
 			path = "Evil Hangman";
@@ -124,6 +127,7 @@
 			files = (
 				7FB9C53F2265555200393227 /* LaunchScreen.storyboard in Resources */,
 				7FB9C53C2265555200393227 /* Assets.xcassets in Resources */,
+				7FB9C54722655A2F00393227 /* dictionary.txt in Resources */,
 				7FB9C53A2265554E00393227 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
