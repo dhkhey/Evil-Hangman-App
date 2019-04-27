@@ -27,29 +27,32 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
         initializeDictionary(availableWords: &availableWords)
         formatUserGuessLabel()
-       // print(wordToGuess)
         guessLetterButton.isEnabled = false
         playAgainButton.isHidden = true
     }
 
     func initializeDictionary(availableWords: inout [String]){
-        //reading from dictionary file
-        let fileURLProject = Bundle.main.path(forResource: "dictionary", ofType: "txt")
-        var readStringProject = ""
+        //read dictionary text file
+        let fileURL = Bundle.main.path(forResource: "dictionary", ofType: "txt")
+        var readString = ""
         do {
-            readStringProject = try String(contentsOfFile: fileURLProject!, encoding:
+            readString = try String(contentsOfFile: fileURL!, encoding:
                 String.Encoding.utf8)
         } catch let error as NSError {
-            print("failed to read from project")
+            print("failed to read from file")
             print(error)
         }
-        //converting read string into array
-        let arrayOfWords = readStringProject.components(separatedBy: .whitespacesAndNewlines)
+        //converting readString into array
+        let arrayOfWords = readString.components(separatedBy: .whitespacesAndNewlines)
        
         //randomly choose a wordLength of target word
-        let availableLengths = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,24,28,29]
+        let availableLengths = [2,3,4,5,6,7,8,9,10]
+        
+        //[11,12,13,14,15,16,17,18,19,20,21,22,24,28,29]
         let wordLength = availableLengths.randomElement()
         
         
@@ -79,9 +82,7 @@ class ViewController: UIViewController {
     }
     
     func findWordFamily()-> [String]{
-        
-        print(availableWords)
-        
+        //print(availableWords)
         var wordFamily:[String] = []
         let guess = guessedLetterField.text!.lowercased()
         for word in availableWords{
@@ -95,13 +96,12 @@ class ViewController: UIViewController {
             }
             wordFamily.append(progress)
         }
-        //print(wordFamily)
         return wordFamily
     }
     
     func guessALetter(){
         let wordFamilies = findWordFamily()
-       
+        
         //find most common world family
         var counts = [String: Int]()
         wordFamilies.forEach{ counts[$0] = (counts[$0] ?? 0) + 1 }
@@ -149,7 +149,7 @@ class ViewController: UIViewController {
                 finalWord += " " + String(letter)
             }
             userGuessLabel.text = finalWord
-            guessCountLabel.text = "So sorry, you're all out of guesses. Try again?"
+            guessCountLabel.text = "You're All Out of Guesses. \n The Word Was: '\(wordToGuess)' \nTry again?"
         } else if !revealedWord.contains("_"){
             playAgainButton.isHidden = false
             guessedLetterField.isEnabled = false
@@ -164,7 +164,7 @@ class ViewController: UIViewController {
     func updateGuessedLetterLabel(){
         var lettersGuessedFormated = ""
         for letter in lettersGuessed{
-            lettersGuessedFormated += (" " + String(letter))
+            lettersGuessedFormated += (" " + String(letter) + " ")
         }
         guessedLetterLabel.text = lettersGuessedFormated
     }
@@ -172,6 +172,7 @@ class ViewController: UIViewController {
     func updateUIAfterGuess(){
         guessedLetterField.resignFirstResponder()
         guessedLetterField.text = ""
+        guessLetterButton.isEnabled = false
     }
     
     @IBAction func guessedLetterFieldChanged(_ sender: UITextField) {
@@ -189,10 +190,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func guessLetterButtonPressed(_ sender: UIButton) {
-        guessALetter()
-        updateGuessedLetterLabel()
-        updateUIAfterGuess()
+        let guess = guessedLetterField.text!.lowercased()
+        
+        if lettersGuessed.contains(guess){
+            guessCountLabel.text = "You Already Guessed the Letter '\(guess)'\n You Have \(WrongGuessesRemaining) Guesses Remaining"
+            updateUIAfterGuess()
+        } else if !(guess >= "a" && guess <= "z"){
+            guessCountLabel.text = "'\(guess)' is Not a Letter! \n You Have \(WrongGuessesRemaining) Guesses Remaining"
+            updateUIAfterGuess()
+        }
+        else{
+            guessALetter()
+            updateGuessedLetterLabel()
+            updateUIAfterGuess()
+        }
     }
+       
     
     
     @IBAction func playAgainButtonPressed(_ sender: UIButton) {
