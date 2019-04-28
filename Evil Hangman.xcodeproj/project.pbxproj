@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FB3AA2B2273E90E00A78B91 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB3AA2A2273E90E00A78B91 /* SplashScreenViewController.swift */; };
 		7FB9C5352265554E00393227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB9C5342265554E00393227 /* AppDelegate.swift */; };
 		7FB9C5372265554E00393227 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB9C5362265554E00393227 /* ViewController.swift */; };
 		7FB9C53A2265554E00393227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB9C5382265554E00393227 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7FB3AA2A2273E90E00A78B91 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		7FB9C5312265554E00393227 /* Evil Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Evil Hangman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB9C5342265554E00393227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FB9C5362265554E00393227 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				7FB9C5342265554E00393227 /* AppDelegate.swift */,
 				7FB9C5362265554E00393227 /* ViewController.swift */,
+				7FB3AA2A2273E90E00A78B91 /* SplashScreenViewController.swift */,
 				7FB9C5382265554E00393227 /* Main.storyboard */,
 				7FB9C53B2265555200393227 /* Assets.xcassets */,
 				7FB9C53D2265555200393227 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			files = (
 				7FB9C5372265554E00393227 /* ViewController.swift in Sources */,
 				7FB9C5352265554E00393227 /* AppDelegate.swift in Sources */,
+				7FB3AA2B2273E90E00A78B91 /* SplashScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
