@@ -1,9 +1,8 @@
 //
-//  SplashScreenViewController.swift
-//  Evil Hangman
 //
-//  Created by Kim, Young-Tae on 4/26/19.
-//  Copyright © 2019 David Kim. All rights reserved.
+//EVIL HANGMAN.
+//ENTER EMPTY SPACE AS GUESS TO TOGGLE OFF EVIL FEATURE.
+//
 //
 
 import UIKit

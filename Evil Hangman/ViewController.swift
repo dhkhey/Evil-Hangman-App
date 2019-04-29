@@ -1,9 +1,8 @@
 //
-//  ViewController.swift
-//  Evil Hangman
 //
-//  Created by Kim, David on 4/15/19.
-//  Copyright © 2019 David Kim. All rights reserved.
+//EVIL HANGMAN.
+//ENTER EMPTY SPACE AS GUESS TO TOGGLE OFF EVIL FEATURE.
+//
 //
 
 import UIKit
@@ -52,6 +51,7 @@ class ViewController: UIViewController {
         //randomly choose a wordLength of target word
         let availableLengths = [2,3,4,5,6,7,8,9,10]//[11,12,13,14,15,16,17,18,19,20,21,22,24,28,29]
         let wordLength = availableLengths.randomElement()
+     
         
         //updating availableWords with array of words with chosen length
         for word in arrayOfWords{
